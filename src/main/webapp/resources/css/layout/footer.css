@@ -1,0 +1,12 @@
+
+.top {
+	position: fixed;
+	right: 30px;
+	bottom: 70px;
+}
+
+.bottom {
+	position: fixed;
+	right: 30px;
+	bottom: 20px;
+}

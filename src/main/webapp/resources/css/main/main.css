@@ -1,0 +1,100 @@
+.title {
+    font-family:'08서울남산체';
+    font-size: 20px;
+    color: #123858;
+}
+
+
+
+.container{
+				display:flex;
+				text-align:center;
+				flex-wrap : wrap;
+				
+			
+				}
+				
+				
+#back{
+	background-image: url(../../pic/inpg/bestBG.jpg);	
+	background-repeat: no-repeat;
+	background-position: center top;
+	}
+				
+table tr td div img {
+	    border: 2px solid;
+	    border-color: #bbbbbb;
+	    border-radius: 6px;
+	    }
+table tr td div img:hover {
+	    opacity: 0.5;
+	    filter: alpha(opacity=80);
+		}
+	
+.besttitle {
+	    font-size: 20px;
+	    padding-top: 50px;
+}		
+	
+
+
+
+
+.gf {
+width: 150px;
+height:150px;
+   font-size: 15px;
+}
+
+.gf:hover {
+ opacity: 0.5;
+ filter: alpha(opacity=80);	
+}
+.gf2 { 	
+		letter-spacing: -1px;
+		margin:auto;
+		width:150px;
+	   text-align: left;
+		overflow: hidden;
+		 font-size: 17px;
+		line-height: 17px;
+		 height: 35px;
+}
+.gf3 {
+	margin:auto;
+	width:150px;
+	text-align: left;
+     color: #333333;
+				font-size: 15px;
+				font-weight: bold;
+}       	
+.gf4{
+	margin:auto;
+		width:150px;
+	text-align: left;
+      color: #717171;
+				font-size: 13px;
+				font-weight: bold;
+}	
+	.child-container{
+    width:25%;	
+    margin-bottom: 50px;				
+	} 
+	
+
+#but{
+				background-color: white;
+				color: #004075;
+				border: 1px solid #004075;
+				height: 30px;
+				width: 70px;
+				text-decoration: none;
+				font-size: 15px;
+				border-radius: 4px;
+				font-weight: bold;
+				cursor: pointer;
+				margin-right: 20px;
+			}	
+	
+	
+			

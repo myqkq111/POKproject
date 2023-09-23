@@ -1,0 +1,36 @@
+package context;
+
+import javax.sql.DataSource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+
+
+@Configuration
+public class Context_2_mybatis {
+	
+//	DataSource ds;
+//	public Context_2_mybatis(DataSource ds) {
+//		this.ds = ds;
+//	}
+	
+	@Bean
+	public SqlSessionFactory factoryBean(DataSource ds) throws Exception {
+		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+		factoryBean.setDataSource(ds);
+		
+		// 추가적인 MyBatis 설정
+        factoryBean.setConfigLocation(new ClassPathResource("config/mybatis/mybatis-config.xml")); //db로 연결한 경로를 가지고 있다.
+        return factoryBean.getObject(); //factoryBean이 db와 연결할 경로의 정보를 갖고 있다.
+  
+	}
+	
+	@Bean
+	public SqlSessionTemplate sqlSessionBean(SqlSessionFactory factoryBean) {
+		return new SqlSessionTemplate(factoryBean);
+	}
+}

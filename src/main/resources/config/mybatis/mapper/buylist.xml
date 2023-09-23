@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="buy">
+
+	<!-- 결제버튼 클릭 후 구매리스트에 등록 -->
+	<insert id="buylist_insert" parameterType="buylist">
+		insert into buylist values(
+						buylist_idx_seq.nextVal,
+						#{member_idx},
+						#{product_idx},
+						#{buyer_name},
+						#{buyer_tell},
+						#{buyer_mailaddr},
+						#{buyer_roadaddr},
+						#{buyer_detailaddr},
+						#{buyer_request},
+						sysdate,
+						#{buy_count}
+		)
+	</insert>
+	
+	<!-- 구매페이지 이동 -->
+	<select id="buylist" resultType="buylist" parameterType="int">
+		select b.*, p.image, p.name, p.price
+		from buylist b join product p
+		on b.product_idx = p.product_idx
+		join member m 
+		on b.member_idx = m.member_idx
+		where b.member_idx = #{member_idx}
+	</select>
+	
+	<!-- 구매내역 삭제 -->
+	<delete id="buylist_delete" parameterType="int">
+		delete from buylist where buylist_idx = #{buylist_idx}
+	</delete>
+
+</mapper>
+		
+		
+		
+		

@@ -1,0 +1,216 @@
+
+<!--공통 폰트 -->
+body { font-family: '08서울남산체'; }
+a { 
+   text-decoration:none;
+   color: black;
+   cursor: pointer;
+}
+
+
+
+
+
+<!-- 로그인 레이아웃 -->
+
+
+
+
+.loginForm {
+	position: relative;
+	align-content: center;
+}
+
+.loginForm .box {
+	width: 200px;
+	height: 200px;
+}
+
+.loginForm .box .iText {
+	width: 130px;
+	height: 8px;
+	margin: 3px 0;
+	padding: 10px 12px;
+	border-color: darkgray solid #e1e1e1;
+	margin-top: 120px;
+	margin-left: 30px;
+}
+
+.loginForm .box .iText2 {
+	width: 130px;
+	height: 8px;
+	margin: 3px 0;
+	padding: 10px 12px;
+	border-color: darkgray solid #e1e1e1;
+	margin-left: 30px;
+}
+
+.loginForm .box p {
+	margin-top: 1em
+}
+
+.loginForm .box p span, .loginForm .box p input {
+	height: 18px;
+	font-size: 11px;
+	color: #737373;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.loginBtn {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80px;
+	height: 70px;
+	padding: 5px;
+	border: 1px solid #555555;
+	border-radius: 5px;
+	font-size: 17px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 60px;
+	text-align: center;
+	background: #f9634d;
+	margin-top: 119px;
+	margin-right: 30px;
+	cursor:pointer;
+}
+.loginBtn:hover {
+	background: #d05442;
+}
+
+#pop {
+	width: 306px;
+	height: 300px;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	text-align: center;
+	border: 2px solid #000;
+	border-radius: 3px;
+	z-index: 1000;
+	margin: -50px 0 0 -50px;
+	border-radius:50%;
+}
+
+#pop_bt {
+	color: black;
+}
+
+#close {
+	width: 100px;
+	margin: auto;
+	cursor: pointer;
+	font-weight: bold;
+	margin-bottom: 2px;
+	z-index: 1001;
+}
+
+.fright {
+	color: black;
+}
+
+#mask {
+	display: none;
+	background: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	z-index: 999;
+}
+
+img.btn_close {
+	float: right;
+	margin: -28px -28px 0 0;
+}
+
+
+
+
+
+
+<!--검색바 -->
+
+
+#searchbox {
+    width: 100%;
+}
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+#searchbox input {
+    outline: none;
+}
+#searchbox input[type="text"] {
+    background: url(http://2.bp.blogspot.com/-xpzxYc77ack/VDpdOE5tzMI/AAAAAAAAAeQ/TyXhIfEIUy4/s1600/search-dark.png) no-repeat 8px 7px #eeeeee;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #004a88;
+    width: 50%;
+    padding: 7px 25px 7px 30px;
+}
+#button-submit {
+    position: relative;
+    right: 10px;
+    background: #004a88;
+    border-width: 0px;
+    padding: 4px 0px 7px;
+    width: 20%;
+    cursor: pointer;
+    font: bold 13px Arial, Helvetica;
+    color: #fff;
+    text-shadow: 0 1px 0 #555;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#button-submit:hover {
+    background: #4f5356;
+}
+#button-submit:active {
+    background: #5b5d60;
+    outline: none;
+}
+#button-submit::-moz-focus-inner {
+    border: 0;
+}
+
+
+
+<!-- 카테고리 메뉴바 -->
+
+.a1 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.a2 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu a:hover {
+    color: #e1e1e1;
+    line-height:41px;
+    border-bottom: 4px solid #c4655a;
+    background-color: #004075;
+}
+
+
+
+
+
+
+

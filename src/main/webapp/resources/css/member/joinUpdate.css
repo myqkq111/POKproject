@@ -1,0 +1,11 @@
+ .memberDelbtn {
+	background: #4f5356;
+	border: 2px solid #4f5356;
+	border-radius: 4px;
+	
+	color: #ffffff;
+	font-weight: bolder;
+}
+.memberDelbtn:hover {
+    background: #292c2e;
+}

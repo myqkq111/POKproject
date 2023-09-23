@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+	<!-- 장바구니 조회 -->
+	<select id="basket_list" resultType="basket" parameterType="int">
+	select p.*, b.*, m.id
+	from basket b 
+	join product p
+	on p.PRODUCT_IDX = b.PRODUCT_IDX
+	JOIN MEMBER m
+	ON m.MEMBER_IDX = b.MEMBER_IDX
+	WHERE m.MEMBER_IDX = #{idx}
+
+	</select>
+	
+	
+	<!-- 장바구니 하나 조회 -->
+	<select id="basket_One" resultType="basket" parameterType="java.util.HashMap">
+	
+	select * from basket
+	WHERE PRODUCT_IDX = #{product_idx}
+	and member_IDX = #{member_idx}
+	
+	</select>
+
+
+	 <!-- 장바구니등록 -->
+	<insert id="basket_insert" parameterType="java.util.HashMap">
+		insert into basket values(
+		basket_idx_seq.nextVal,
+		#{member_idx},
+		#{product_idx},
+		sysdate
+		)
+		
+	</insert>
+
+	<!-- 장바구니목록삭제 -->
+	<delete id="basket_delete" parameterType="String">
+		delete from basket where basket_idx= #{basket_idx}
+	</delete>
+
+</mapper>
+		
+		
+		
+		

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="p">
+
+	<!-- 상품등록 -->
+	<insert id="product_insert" parameterType="product">
+		insert into product values(
+				product_idx_seq.nextVal,
+				#{cate},
+				#{name},
+				#{price},
+				#{image},
+				#{content},
+				sysdate,
+				#{inven},
+				0,
+				#{content_img},
+				0
+		)
+	</insert>
+
+	
+	<!-- 상품변경 -->
+	<update id="product_update" parameterType="product">
+	update product set
+	cate = #{cate},
+	name = #{name},
+	price = #{price},
+	image = #{image},
+	content = #{content},
+	inven = #{inven},
+	content_img =#{content_img}
+	where product_idx = #{product_idx} 
+	
+	</update>
+	
+	
+	<!-- 관리자 상품 삭제 -->
+	<delete id="product_delete" parameterType="String">
+		delete from product where product_idx= #{idx}
+	</delete>
+	
+			
+	<!-- 상품 전체조회(관리자페이지) -->
+	<select id="p_list" resultType="product">
+		select * from product	
+	</select>	
+	
+	
+	
+	<!-- idx에 맞는 상품 하나 조회(관리자페이지) -->
+	<select id="p_one" resultType="product" parameterType="String" >
+		select * from product where product_idx = #{idx}
+	</select>
+	
+	
+	<!-- 조회수증가 -->
+	<update id="update_hit" parameterType="int">
+		update product set hit= hit+1
+		where product_idx=#{product_idx}
+	</update>
+	
+	
+	
+		
+	<!-- 상품 조회(메인페이지 전시용) -->
+	<select id="main_Product" resultType="product">
+		select * from (select rank() over(order by product_idx asc) no, p.* from product p) 
+		where no between 1 and 20
+	</select>	
+	
+	<!-- 상품 조회(다음 상품이 있는지 없는지 확인) -->
+	<select id="nextCheck" resultType="int">
+		select count(*) from (select rank() over(order by product_idx asc) no, p.* from product p)
+		where no = 21
+	</select>
+	
+	<!-- 상품 조희 더보기(메인페이지 전시용) -->
+	<select id="main_Product_plus" resultType="product" parameterType="java.util.HashMap">
+		select * from (select rank() over(order by product_idx asc) no, p.* from product p) 
+		where no between #{start} and #{end}
+	</select>
+	
+	<!-- 상품 조희 더보기(다음 상품이 있는지 없는지 확인) -->
+	<select id="main_Product_plus_nextCheck" resultType="int" parameterType="int">
+		select count(*) from (select rank() over(order by product_idx asc) no, p.* from product p) 
+		where no = #{end}
+	</select>
+		
+	<!-- 카테고리 페이지 이동 -->
+	<select id="cate_page" resultType="product" parameterType="String">
+		select * from product where cate = #{cate} order by regdt
+	</select>		
+			
+	<!-- 카테고리 페이지 상품갯수 조회 -->
+	<select id="pok_count" resultType="int" parameterType="String">
+		select count(*) from product where cate = #{cate}
+	</select>
+			
+	<!-- 카테고리 페이지 신상품순 정렬 -->		
+	<select id="cate_array_new" resultType="product" parameterType="String">
+		select * from product where cate = #{cate} order by regdt desc
+	</select>
+	
+	<!-- 카테고리 페이지 판매인기순 정렬 -->
+	<select id="cate_array_best" resultType="product" parameterType="String">
+		select * from product where cate = #{cate} order by sale_count desc
+	</select>
+	
+	<!-- 카테고리 페이지 낮은가격순 정렬 -->
+	<select id="cate_array_low" resultType="product" parameterType="String">
+		select * from product where cate = #{cate} order by price
+	</select>
+	
+	<!-- 카테고리 페이지 높은가격순 정렬 -->
+	<select id="cate_array_high" resultType="product" parameterType="String">
+		select * from product where cate = #{cate} order by price desc
+	</select>
+	
+	<!-- 상품 상세페이지 -->
+	<select id="product_information" resultType="product" parameterType="int">
+		select * from product where product_idx = #{product_idx}
+	</select>		
+			
+	<!-- 검색기능 -->
+	<select id="searchs" resultType="product" parameterType="String">
+		select * from product where name like '%' || #{search}
+					 or name like '%'||#{search}||'%' 
+					 or name like '%'||#{search}   
+	</select>		
+			
+	<!-- 검색한 상품의 갯수 -->
+	<select id="search_count" resultType="int" parameterType="String">
+		select count(*) from product where name like '%'||#{search}||'%'
+	</select>		
+			
+	<!-- 검색페이지 신상품순 정렬(카테고리 선택x) -->		
+	<select id="search_cateNo_array_new" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' order by regdt desc
+	</select>
+	
+	<!-- 검색페이지 판매인기순 정렬(카테고리 선택x)-->
+	<select id="search_cateNo_array_best" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' order by sale_count desc
+	</select>
+	
+	<!-- 검색페이지 낮은가격순 정렬(카테고리 선택x) -->
+	<select id="search_cateNo_array_low" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' order by price
+	</select>
+	
+	<!-- 검색페이지 높은가격순 정렬(카테고리 선택x) -->
+	<select id="search_cateNo_array_high" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' order by price desc
+	</select>		
+	
+	<!-- 검색페이지 신상품순 정렬(카테고리 선택o) -->		
+	<select id="search_cateYes_array_new" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' and cate = #{cate} order by regdt desc
+	</select>
+	
+	<!-- 검색페이지 판매인기순 정렬(카테고리 선택o)-->
+	<select id="search_cateYes_array_best" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' and cate = #{cate} order by sale_count desc
+	</select>
+	
+	<!-- 검색페이지 낮은가격순 정렬(카테고리 선택o) -->
+	<select id="search_cateYes_array_low" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' and cate = #{cate} order by price
+	</select>
+	
+	<!-- 검색페이지 높은가격순 정렬(카테고리 선택o) -->
+	<select id="search_cateYes_array_high" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' and cate = #{cate} order by price desc
+	</select>	
+	
+	<!-- 검색페이지 카테고리(정렬x)-->
+	<select id="search_cate" resultType="product" parameterType="java.util.HashMap">
+		select * from product where name like '%'||#{search}||'%' and cate = #{cate} order by regdt
+	</select>
+	
+	<!-- 검색페이지 카테고리 상품갯수 -->
+	<select id="search_cate_count" resultType="int" parameterType="java.util.HashMap">
+		select count(*) from product where name like '%'||#{search}||'%' and cate = #{cate}
+	</select>
+	<!-- 구매갯수만큼 상품의 재고수량에서 빼고 판매량 올리기 -->
+	<update id="b_count" parameterType="java.util.HashMap">
+		update product set inven = (inven - #{buy_count}), sale_count = (sale_count + #{buy_count})
+		where product_idx = #{product_idx}
+	</update>
+
+</mapper>
+		
+		
+		
+		
