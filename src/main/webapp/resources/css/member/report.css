@@ -1,0 +1,24 @@
+.reporttd{
+	height:50px;
+	color: #000;
+	font-size: 18px;
+}
+		      
+.reportdiv{
+	overflow-y: scroll;
+	height: 80px;
+	background-color: #F6F6F6;
+}
+		      
+.report{
+	border: 1px solid #D5D5D5; 
+	width: 800px; 
+	height:190px;; 
+	margin:auto; 
+	padding-top: 10px;
+}
+		      
+.checksize{
+	zoom: 1.3;
+	cursor: pointer;
+}

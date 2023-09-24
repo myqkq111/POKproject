@@ -6,19 +6,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>게시글 삭제</title>
-		<style  type="text/css">
-        body { font-family: '08서울남산체'; }
-        a { 
-            text-decoration:none;
-            color: black;
-            cursor: pointer;
-        }
-    	</style>
     	
     	<link rel="stylesheet" href="resources/css/layout/btn.css"/>
 		<link rel="stylesheet" href="resources/css/board/list.css"/>
-		<script src="resources/js/httpRequest.js"></script>
 		
+		<script src="resources/js/httpRequest.js"></script>	
 		<script type="text/javascript">
 			function del() {
 				if(!confirm("삭제하시겠습니까?")) {
@@ -53,10 +45,10 @@
 					}
 				}
 			}
-		</script>
-		
+		</script>		
 	</head>
 	<body>
+	
 		<jsp:include page="../layout/header.jsp"/>
 		
 		<table border="0" width="1000" align="center">
@@ -100,5 +92,6 @@
 		</table>
 		
 		<jsp:include page="../layout/footer.jsp"/>
+		
 	</body>
 </html>

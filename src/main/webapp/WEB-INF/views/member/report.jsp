@@ -5,38 +5,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<style type="text/css">
-			 .reporttd{
-		      height:50px;
-		      color: #000;
-		      font-size: 18px;
-		      }
-		      
-		      .reportdiv{
-		      overflow-y: scroll;
-		      height: 80px;
-		      background-color: #F6F6F6;
-		      }
-		      
-		      .report{
-		      border: 1px solid #D5D5D5; 
-		      width: 800px; 
-		      height:190px;; 
-		      margin:auto; 
-		      padding-top: 10px;
-		      }
-		      
-		      .checksize{
-		      	
-		      	zoom: 1.3;
-    			cursor: pointer;
-    		
-		      }
-		</style>
-		<script type="text/javascript">
-			
-			function checkboxon(){
-				
+		
+		<link rel="stylesheet" href="resources/css/member/report.css">
+		
+		<script type="text/javascript">			
+			function checkboxon(){			
 				var wholecheck = document.getElementById('wholecheck');
 				var reportcheck1 = document.getElementById('reportcheck1');
 				var reportcheck2 = document.getElementById('reportcheck2');
@@ -48,9 +21,7 @@
 					reportcheck1.checked = false;
 					reportcheck2.checked = false;
 				}
-			}
-		
-		
+			}	
 		</script>
 	</head>
 	<body>
@@ -152,6 +123,5 @@
 				</tr>
 			</table>
 		</div>
-	
 	</body>
 </html>

@@ -1,43 +1,51 @@
 .title {
     font-family:'08서울남산체';
     font-size: 20px;
-    color: #123858;
+	color: #123858;
 }
 
 .container{
 	display:flex;
 	text-align:center;
 	flex-wrap : wrap;
+	padding: 15px 240px;
+	margin:0;
 }
-							
-#back{
-	background-image: url(../../pic/inpg/bestBG.jpg);	
-	background-repeat: no-repeat;
-	background-position: center top;
+			
+.arr{
+	font-family:'맑은고딕';
+	color: #000000;
+	text-align:right;
 }
-				
-table tr td div img {
-    border: 2px solid;
-    border-color: #bbbbbb;
-    border-radius: 6px;
+			
+.arr:hover{
+	color: #AAAAAA;
+	cursor:pointer;
 }
-
-table tr td div img:hover {
-    opacity: 0.5;
-    filter: alpha(opacity=80);
+					
+input[type="radio"] {
+  	display: none;
 }
-	
-.besttitle {
-    font-size: 20px;
-    padding-top: 50px;
-}		
-	
+			
+input[type="radio"] + label span.img{
+    display:inline-block;
+    width: 22px;height: 22px;
+    margin: -2px 9px 0 4px;
+    font-size: 0;
+    vertical-align: middle;
+    background: url(#) no-repeat;cursor:pointer;
+}
+			
+input[type="radio"]:checked + label span.img {
+	background: url('resources/sun/sun.png') no-repeat;
+}
+					
 .gf {
 	width: 150px;
 	height:150px;
     font-size: 15px;
 }
-
+			
 .gf:hover {
 	opacity: 0.5;
 	filter: alpha(opacity=80);	
@@ -51,7 +59,7 @@ table tr td div img:hover {
 	overflow: hidden;
 	font-size: 17px;
 	line-height: 17px;
-	height: 35px;
+	height: 30px;
 }
 
 .gf3 {
@@ -61,8 +69,8 @@ table tr td div img:hover {
 	color: #333333;
 	font-size: 15px;
 	font-weight: bold;
-} 
-      	
+}      
+ 	
 .gf4{
 	margin:auto;
 	width:150px;
@@ -76,39 +84,11 @@ table tr td div img:hover {
     width:25%;	
     margin-bottom: 50px;				
 } 
-
-#but{
-	background-color: white;
-	color: #004075;
-	border: 1px solid #004075;
-	height: 30px;
-	width: 70px;
-	text-decoration: none;
-	font-size: 15px;
-	border-radius: 4px;
-	font-weight: bold;
-	cursor: pointer;
-	margin-right: 20px;
-}	
-	
-#but{
-	background-color: white;
-	color: #004075;
-	border: 1px solid #004075;
-	height: 30px;
-	width: 70px;
-	text-decoration: none;
-	font-size: 15px;
-	border-radius: 4px;
-	font-weight: bold;
-	cursor: pointer;
-	margin-right: 20px;
-}
-			
+				
 .gf1 {
 	width: 200px;
 	height:200px;
-	font-size: 15px;   
+	font-size: 15px;	   
 }
 
 .gf5{
@@ -116,13 +96,8 @@ table tr td div img:hover {
 	height:150px;
     font-size: 15px;
     opacity: 0.3;
-}
-
-.item-container{
-	margin:0 auto;
-	padding:0 10%;	
-}
-			
+}		
+		
 p.typing-txt{
 	color:red;
 	font-weight:bold;
@@ -133,10 +108,11 @@ p.typing-txt{
 	animation: typingAni 1.5s steps(30, end) 1;
 	animation-iteration-count: infinite;
 }
-
+		
 @keyframes typingAni {
  /*  0%{width:0%}
-  100%{width: 65px}; */
-   50% {
-   opacity: 0;
-}		
+100%{width: 65px}; */
+	50% {
+	 opacity: 0;
+	}
+}

@@ -8,28 +8,15 @@
 		<meta charset="UTF-8">
 		<title>게시판 글작성</title>
 		<!-- 파비콘 -->
-	<link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSns5ofF0boSBplTcCl083LYMtJHS7t8Gj4_w&usqp=CAU">	  
-		  
-		
-		<style  type="text/css">
-        body { font-family: '08서울남산체'; }
-        a { 
-            text-decoration:none;
-            color: black;
-            cursor: pointer;
-        }
-    	</style>
-		<script language="javaScript" src="js/script.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSns5ofF0boSBplTcCl083LYMtJHS7t8Gj4_w&usqp=CAU">	  
 		
 		<link rel="stylesheet" href="resources/css/layout/btn.css"/>
 		<link rel="stylesheet" href="resources/css/board/list.css"/>
 		
-		<script src="resources/js/httpRequest.js"></script>
-		
+		<script language="javaScript" src="js/script.js"></script>	
+		<script src="resources/js/httpRequest.js"></script>		
 		<script type="text/javascript">
-			function send(f) {
-				
-				
+			function send(f) {				
 				f.action = "delform.do";
 				f.method="post";
 				f.submit();
@@ -38,10 +25,10 @@
 			function reply() {
 				location.href="reply_form.do?idx=${vo.idx}&page=${param.page}";
 			}
-		</script>
-		
+		</script>		
 	</head>
 	<body>
+	
 		<jsp:include page="../layout/header.jsp"/>
 		
 		<table border="0" width="1000" align="center">
@@ -103,6 +90,8 @@
    				</tr>
 			</table>
 		</form>
+		
 		<jsp:include page="../layout/footer.jsp"/>
+		
 	</body>
 </html>

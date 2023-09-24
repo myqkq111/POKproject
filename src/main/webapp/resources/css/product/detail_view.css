@@ -1,0 +1,207 @@
+.container {
+	display: flex;
+	width: 70%;
+	align: right;
+	text-align: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.child-container {
+	width: 50%;
+}
+
+.table_view {
+	margin: auto;
+	border-spacing: 40px 25px;
+	line-height: normal;
+	border: 1px solid #D5D5D5;
+}	
+
+.view_img_wrap{ 
+	text-align:center;
+	padding:5px;
+	width: 60%;
+	box-shadow: inset 3px 3px 7px 3px rgb(77, 71, 71);
+}
+
+.view_img {
+	text-align: center;
+	width: 50%;
+	height: auto;
+	object-fit: cover;
+	/*border: 1px solid #444;*/
+}
+
+.sub_title{
+	font-size: 15px;
+	color:#717171;
+}
+
+.sub_name{
+	font-size: 18px;
+  	letter-spacing: -1px;
+	margin:15px;
+}
+
+.price{
+	border:none;
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	text-align: right;
+    font-size: 22px;
+    color: #666666;
+}
+
+button {
+	float:right;
+	height: 55px;
+	width: 170px;
+	text-decoration: none;
+	font-size: 20px;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	margin:auto;
+}
+
+.btn_pur {
+	border: none;
+	color: white;
+	background-color: #004075;
+}
+
+.btn_bas {
+	background-color: white;
+	color: #004075;
+	border: 1px solid #D5D5D5;
+}
+	
+.right {
+	border: 3px solid #004075; 
+	border-bottom: 3px solid #004075; 
+	border-left: 0px; 
+	border-top-right-radius: 10px;
+	font-weight: bold;
+}
+
+.left {
+	border: 3px solid #004075;
+	border-bottom: 3px solid #004075;
+	border-right: 0px;
+	border-top-left-radius: 10px;
+	font-weight: bold;
+}
+
+.click {
+	border: 5px solid #004075; 
+	border-bottom: 0px; 
+	border-top-left-radius: 10px; 
+	border-top-right-radius: 10px;
+	background-color: #004075;
+	font-weight: bold;
+}
+
+.click a { color: #fff; }
+	
+.baesong{
+	border: 2px solid #EAEAEA;
+	padding: 6px;
+    height: 20px;
+	font-size: 13px !important;
+	background-color: #F6F6F6;
+} 	
+
+.baesong:hover{
+	background-color:#EAEAEA;
+}
+
+.baesongimg{
+	width:5px; 
+	height:5px;
+	margin-left:5px;
+	margin-bottom:2px;
+}	
+	
+#hiddendiv{
+	background-color: #FFFFFF;
+	border:solid 1px #000000;
+	height: 207px;
+	width: 300px;
+	display:flex; 
+	position:absolute;
+	top: 82%;
+	left: 60%;
+	display:none;	
+	padding-right:10px;	
+	padding-left:10px;		
+}
+
+th{
+    padding: 0 5px 0 3px;
+	border-bottom: 1px solid #e8e8e8;
+    color: #444;
+    font-size: 13px;
+    text-align: left;
+}
+
+.hiddentd{
+    padding: 8px 0 8px 12px;
+    color: #666;
+    font-size: 12px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.hiddenp{
+	min-height: 17px;
+    margin: 15px 0 0;
+    padding: 0 0 0 19px;
+    background: #fff url(../img/icon/caution-1.png) no-repeat left 2px;
+    color: #3e3d3c;
+    line-height: 20px;
+}
+
+li{
+	font-size: 13px;
+	color: #555;
+    line-height: 18px;
+}
+
+#hiddenstrong{
+	display: block;
+    height: 27px;
+    padding: 10px 0 0 0px;
+    color: #222;
+}	
+		
+#hiddenid{
+	cursor:pointer;
+}
+
+#hiddenul{
+	list-style-type:circle;
+	padding-left: 30px;
+}	
+		
+#backdiv{
+	height: 32px;
+	width: 40px;
+	/* font-size: 14px;
+	align-items : center;
+	display:flex; */ /* 텍스트 있을 때 가로, 세로 중앙정렬 */
+}
+
+#backdiv img{
+	height: 32px;
+	width: 40px;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}			
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+	opacity: 1;
+	background-color: white;
+}

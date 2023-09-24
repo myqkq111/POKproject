@@ -1,0 +1,92 @@
+.btn_bas {
+	background-color: white;
+	color: #004075;
+	border: 1px solid #004075;
+	height: 30px;
+	width: 70px;
+	text-decoration: none;
+	font-size: 15px;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.sub_name{
+	font-size: 18px;
+  	letter-spacing: -1px;
+	margin:15px;
+}
+
+#listimage{
+	width:110px;
+	height:130px;
+	cursor:pointer;
+}
+			
+.baesong{
+	border: 2px solid #EAEAEA;
+	padding: 6px;
+    height: 20px;
+	font-size: 13px !important;
+	background-color: #F6F6F6;
+	margin-left:70px;
+} 	
+
+.baesong:hover{
+	background-color:#EAEAEA;
+}
+
+.baesongimg{
+	width:5px; 
+	height:5px;
+	margin-left:5px;
+	margin-bottom:2px;			
+}	
+
+#hiddendiv{
+	background-color: #FFFFFF;
+	border:solid 1px #000000;
+	height: 225px;
+	width: 300px;
+	display:flex; 
+	position:absolute;
+	top: 65%;
+	left: 33%;
+	display:none;	
+	padding-right:10px;	
+	padding-left:10px;		
+}
+			
+th{
+    padding: 0 5px 0 3px;
+	border-bottom: 1px solid #e8e8e8;
+    color: #444;
+    font-size: 13px;
+    text-align: left;
+}
+
+.hiddentd{
+    padding: 8px 0 8px 12px;
+    color: #666;
+    font-size: 12px;
+    border-bottom: 1px solid #e8e8e8;
+}
+			
+#hiddenstrong{
+	width: 100px;
+	display: block;
+    height: 27px;
+    padding: 10px 0 0 0px;
+    color: #222;
+}		
+	
+#hiddenid{
+	cursor:pointer;
+}
+			
+.hiddentd2{
+    padding: 8px 0 8px 12px;
+    color: #666;
+    font-size: 12px;		
+}

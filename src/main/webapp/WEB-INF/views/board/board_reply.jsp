@@ -4,21 +4,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-	<!-- 파비콘 -->
-	<link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSns5ofF0boSBplTcCl083LYMtJHS7t8Gj4_w&usqp=CAU">	  
-		  
-		
+	<head>	  	
 		<meta charset="UTF-8">
 		<title>POK::답글달기</title>
-		<style  type="text/css">
-        body { font-family: '08서울남산체'; }
-        a { 
-            text-decoration:none;
-            color: black;
-            cursor: pointer;
-        }
-    	</style>
+		
+		<!-- 파비콘 -->
+		<link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSns5ofF0boSBplTcCl083LYMtJHS7t8Gj4_w&usqp=CAU">
+    	
+    	<link rel="stylesheet" href="resources/css/layout/btn.css"/>
+		<link rel="stylesheet" href="resources/css/board/list.css"/>
     	
     	<script type="text/javascript">
 			function send_check(){
@@ -26,13 +20,10 @@
 				
 				f.submit();
 			}
-		</script>
-    	
-    	<link rel="stylesheet" href="resources/css/layout/btn.css"/>
-		<link rel="stylesheet" href="resources/css/board/list.css"/>
-		
+		</script>	
 	</head>
 	<body>
+	
 		<jsp:include page="../layout/header.jsp"/>
 		
 		<table border="0" width="1000" align="center">
@@ -94,5 +85,6 @@
 		</form>
 		
 		<jsp:include page="../layout/footer.jsp"/>
+		
 	</body>
 </html>

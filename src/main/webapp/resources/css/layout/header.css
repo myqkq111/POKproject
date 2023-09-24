@@ -1,4 +1,3 @@
-
 <!--공통 폰트 -->
 body { font-family: '08서울남산체'; }
 a { 
@@ -7,15 +6,18 @@ a {
    cursor: pointer;
 }
 
+html{ scroll-behavior:smooth; }
 
+body{
+	padding: 0 9.5%;
+}
 
-
+@keyframes motion {
+	0% {padding-top: 0px;} 
+	100% {padding-top: 8px;} 
+}
 
 <!-- 로그인 레이아웃 -->
-
-
-
-
 .loginForm {
 	position: relative;
 	align-content: center;
@@ -77,6 +79,7 @@ a {
 	margin-right: 30px;
 	cursor:pointer;
 }
+
 .loginBtn:hover {
 	background: #d05442;
 }
@@ -130,29 +133,36 @@ img.btn_close {
 	margin: -28px -28px 0 0;
 }
 
-
-
-
-
+#loginback{
+	background-image: url("resources/pic/login.jpg");
+	background-repeat: no-repeat;
+	valign:middle;
+	width: 306px;
+	height: 300px;
+	border-radius:50%;
+}
 
 <!--검색바 -->
-
-
 #searchbox {
     width: 100%;
 }
+
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
+
 input:focus:-moz-placeholder {
     color: transparent;
 }
+
 input:focus::-moz-placeholder {
     color: transparent;
 }
+
 #searchbox input {
     outline: none;
 }
+
 #searchbox input[type="text"] {
     background: url(http://2.bp.blogspot.com/-xpzxYc77ack/VDpdOE5tzMI/AAAAAAAAAeQ/TyXhIfEIUy4/s1600/search-dark.png) no-repeat 8px 7px #eeeeee;
     border-width: 1px;
@@ -163,6 +173,7 @@ input:focus::-moz-placeholder {
     width: 50%;
     padding: 7px 25px 7px 30px;
 }
+
 #button-submit {
     position: relative;
     right: 10px;
@@ -177,25 +188,26 @@ input:focus::-moz-placeholder {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 #button-submit:hover {
     background: #4f5356;
 }
+
 #button-submit:active {
     background: #5b5d60;
     outline: none;
 }
+
 #button-submit::-moz-focus-inner {
     border: 0;
 }
 
-
-
 <!-- 카테고리 메뉴바 -->
-
 .a1 {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
 .a2 {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -208,9 +220,21 @@ input:focus::-moz-placeholder {
     background-color: #004075;
 }
 
+.menu a{
+    color:#ffffff;
+    letter-spacing:1px;
+    line-height:45px;
+    display:block;
+    background-color: #004a88;
+    font-family: '08���ﳲ��ü';
+}
 
-
-
-
-
-
+.icon{
+	position:absolute;
+	height:23px;
+	top:0;
+	left:5px;
+    animation: motion 0.3s 
+               linear 0s   
+               infinite alternate; 
+  }

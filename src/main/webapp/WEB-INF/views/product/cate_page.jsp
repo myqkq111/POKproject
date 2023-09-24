@@ -7,135 +7,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>POK::물품카테고리</title>
+		
 		<!-- 파비콘 -->
-	<link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSns5ofF0boSBplTcCl083LYMtJHS7t8Gj4_w&usqp=CAU">	  
-		  
+		<link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSns5ofF0boSBplTcCl083LYMtJHS7t8Gj4_w&usqp=CAU">	  
 		
-		
-		<style>
-		
-		.title {
-				    font-family:'08서울남산체';
-				    font-size: 20px;
-				    color: #123858;
-					}
-		.container{
-			display:flex;
-			text-align:center;
-			flex-wrap : wrap;
-			padding: 15px 240px;
-			margin:0;
-			}
-			
-			.arr{
-					font-family:'맑은고딕';
-					color: #000000;
-					text-align:right;
-
-					}
-			
-			.arr:hover{
-					color: #AAAAAA;
-					cursor:pointer;
-					}
-					
-			input[type="radio"] {
-				  	display: none;
-					}
-			
-			input[type="radio"] + label span.img{
-				    display:inline-block;
-				    width: 22px;height: 22px;
-				    margin: -2px 9px 0 4px;
-				    font-size: 0;
-				    vertical-align: middle;
-				    background: url(#) no-repeat;cursor:pointer;
-				    }
-			
-			input[type="radio"]:checked + label span.img {
-			  		background: url('resources/sun/sun.png') no-repeat;
-					}
-					
-					
-							
-			.gf {
-			width: 150px;
-			height:150px;
-			   font-size: 15px;
-			}
-			
-			.gf:hover {
-			 opacity: 0.5;
-			 filter: alpha(opacity=80);	
-			}
-			.gf2 { 	
-					letter-spacing: -1px;
-					margin:auto;
-					width:150px;
-				   text-align: left;
-   				overflow: hidden;
-  					 font-size: 17px;
-   				line-height: 17px;
-  					 height: 30px;
-			}
-			.gf3 {
-				margin:auto;
-					width:150px;
-				text-align: left;
-			      color: #333333;
-   				font-size: 15px;
-   				font-weight: bold;
-			}       	
-			.gf4{
-				margin:auto;
-					width:150px;
-				text-align: left;
-			      color: #717171;
-   				font-size: 13px;
-   				font-weight: bold;
-			}	
-				.child-container{
-			    width:25%;	
-			    margin-bottom: 50px;				
-				} 
-				
-			.gf1 {
-				width: 200px;
-				height:200px;
-				   font-size: 15px;
-				   
-				}
-			.gf5{
-				width: 150px;
-			height:150px;
-			   font-size: 15px;
-			   opacity: 0.3;
-			}		
-			
-			
-			
-		p.typing-txt{
-		  color:red;
-		  font-weight:bold;
-		  position:relative;
-		  display: inline-block;
-		  height: 20px; 
-		  overflow: hidden;
-		  animation: typingAni 1.5s steps(30, end) 1;
-		  animation-iteration-count: infinite;
-		}
-		
-		@keyframes typingAni {
-		 /*  0%{width:0%}
-		  100%{width: 65px}; */
-		  
-		   50% {
-		    opacity: 0;
-		  }
-}
-		</style>
+		<link rel="stylesheet" href="resources/css/product/cate_page.css">
 	</head>
 	<body>
+	
 		<!-- 상단 -->
 		<jsp:include page="../layout/header.jsp"/>
 	
@@ -208,26 +87,23 @@
 		</c:if>			
 		
 		<c:if test="${not empty list }">
-				<div class="container">
+			<div class="container">
 				<c:forEach var="list" items="${list }">
 				 	<c:if test="${list.inven >= 1 }">
-					  	<div class="child-container" style="position:relative;">
-					 	
-					 	
-					 	<a href="detail_view.do?product_idx=${list.product_idx }" >
-							<img class="gf" src="resources/productImage/${list.image }"style="position:absolute;" >
-							<img class="gf" src="resources/pic/click/ball_click.png"><br><br>
-							<div class="gf2"><strong>${list.name }</strong></div>
-						     <div class="gf3"><strong><f:formatNumber value="${list.price }" type="number"/></strong>원</div>				
-						     <div class="gf4" style="position:relative;" >조회수 : ${list.hit} </div>
-						     <div style="position:absolute; left: 18%; ">
-					     	<c:if test="${list.hit >= 5 }">
-						 	 <img src="resources/pic/hot-item.png" style="width:40px;"><p class="typing-txt">Hot🔥</p> 
-						 	</c:if>
-						 	</div>
-						      </a>
-						      
-						      <br><br>  
+					  	<div class="child-container" style="position:relative;">			 	
+					 		<a href="detail_view.do?product_idx=${list.product_idx }" >
+								<img class="gf" src="resources/productImage/${list.image }"style="position:absolute;" >
+								<img class="gf" src="resources/pic/click/ball_click.png"><br><br>
+								<div class="gf2"><strong>${list.name }</strong></div>
+						     	<div class="gf3"><strong><f:formatNumber value="${list.price }" type="number"/></strong>원</div>				
+						    	<div class="gf4" style="position:relative;" >조회수 : ${list.hit} </div>
+						     	<div style="position:absolute; left: 18%; ">
+						     		<c:if test="${list.hit >= 5 }">
+							 	 		<img src="resources/pic/hot-item.png" style="width:40px;"><p class="typing-txt">Hot🔥</p> 
+							 		</c:if>
+						 		</div>
+						    </a>					      
+						    <br><br>  
 						</div> 
 					</c:if>	
 					<c:if test="${list.inven < 1 }">
@@ -242,9 +118,11 @@
 						</div>	
 					</c:if>	
 				</c:forEach>
+			</div>
 		</c:if>				
 		
 		<!-- 하단 -->
 		<jsp:include page="../layout/footer.jsp"/>	
+		
 	</body>
 </html>

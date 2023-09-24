@@ -6,214 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<style type="text/css">
-		
-		.container {
-			display: flex;
-			width: 70%;
-			align: right;
-			text-align: center;
-			flex-wrap: wrap;
-			margin: 0 auto;
-		}
-		
-		.child-container {
-			width: 50%;
-		}
-		
-		.table_view {
-			margin: auto;
-			border-spacing: 40px 25px;
-			line-height: normal;
-			border: 1px solid #D5D5D5;
-		}	
-		
-		
-		
-		.view_img_wrap{ 
-		text-align:center;
-		padding:5px;
-		width: 60%;
-		box-shadow: inset 3px 3px 7px 3px rgb(77, 71, 71);
-		}
-		
-			
-		.view_img {
-			text-align: center;
-			width: 50%;
-			height: auto;
-			object-fit: cover;
-			/*border: 1px solid #444;*/
-		}
-		
-		
-		.sub_title{
-			font-size: 15px;
-			color:#717171;
-		}
-		.sub_name{
-			font-size: 18px;
-    		letter-spacing: -1px;
-			margin:15px;
-		}
-		
-		.price{
-			border:none;
-			border-bottom: 0px;
-			border-left: 0px;
-			border-right: 0px;
-			border-top: 0px;
-			text-align: right;
-		    font-size: 22px;
-		    color: #666666;
-		}
-
-		button {
-			float:right;
-			height: 55px;
-			width: 170px;
-			text-decoration: none;
-			font-size: 20px;
-			border-radius: 4px;
-			font-weight: bold;
-			cursor: pointer;
-			margin:auto;
-		}
-		.btn_pur {
-			border: none;
-			color: white;
-			background-color: #004075;
-		}
-		/*.btn_bas:hover{
-						background-color: #ABABAB;
-					}*/
-		.btn_bas {
-			background-color: white;
-			color: #004075;
-			border: 1px solid #D5D5D5;
-		}
-		/*.btn_pur:hover{
-						background-color:#E8DB6B;
-					}*/
-		/* .btn_back {
-			border: none;
-			background-color: #004075;
-			color: white;
-		} */
-			
-		.right {
-			border: 3px solid #004075; 
-			border-bottom: 3px solid #004075; 
-			border-left: 0px; 
-			border-top-right-radius: 10px;
-			font-weight: bold;
-		}
-		.left {
-			border: 3px solid #004075;
-			border-bottom: 3px solid #004075;
-			border-right: 0px;
-			border-top-left-radius: 10px;
-			font-weight: bold;
-		}
-		.click {
-			border: 5px solid #004075; 
-			border-bottom: 0px; 
-			border-top-left-radius: 10px; 
-			border-top-right-radius: 10px;
-			background-color: #004075;
-			font-weight: bold;
-		}
-		.click a { color: #fff; }	
-		.baesong{
-					border: 2px solid #EAEAEA;
-					padding: 6px;
-				    height: 20px;
-   					font-size: 13px !important;
-   					background-color: #F6F6F6;
-			} 	
-		.baesong:hover{
-						background-color:#EAEAEA;
-					}
-		.baesongimg{
-					width:5px; 
-					height:5px;
-					margin-left:5px;
-					margin-bottom:2px;
-		}	
-			
-		#hiddendiv{
-				background-color: #FFFFFF;
-				border:solid 1px #000000;
-				height: 207px;
-				width: 300px;
-				display:flex; 
-				position:absolute;
-				top: 82%;
-				left: 60%;
-				display:none;	
-				padding-right:10px;	
-				padding-left:10px;		
-		}
-		th{
-			    padding: 0 5px 0 3px;
-  				border-bottom: 1px solid #e8e8e8;
-			    color: #444;
-			    font-size: 13px;
-			    text-align: left;
-		}
-		.hiddentd{
-			    padding: 8px 0 8px 12px;
-			    color: #666;
-			    font-size: 12px;
-			    border-bottom: 1px solid #e8e8e8;
-		}
-		.hiddenp{
-				min-height: 17px;
-			    margin: 15px 0 0;
-			    padding: 0 0 0 19px;
-			    background: #fff url(../img/icon/caution-1.png) no-repeat left 2px;
-			    color: #3e3d3c;
-			    line-height: 20px;
-		
-		}
-		li{
-				font-size: 13px;
-				color: #555;
-  			    line-height: 18px;
-		}
-		#hiddenstrong{
-				display: block;
-			    height: 27px;
-			    padding: 10px 0 0 10px;
-			    color: #222;
-		}			
-		#hiddenid{
-			cursor:pointer;
-		}
-		#hiddenul{
-			list-style-type:circle;
-			padding-left: 30px;
-		}			
-		#backdiv{
-			height: 32px;
-			width: 40px;
-			/* font-size: 14px;
-			align-items : center;
-			display:flex; */ /* 텍스트 있을 때 가로, 세로 중앙정렬 */
-		}
-		#backdiv img{
-		height: 32px;
-			width: 40px;
-			background-color: #FFFFFF;
-			cursor: pointer;
-		}			
-		
-		input[type=number]::-webkit-inner-spin-button, 
-		input[type=number]::-webkit-outer-spin-button {
-		  opacity: 1;
-		  background-color: white;
-		}
-		</style>
+	
+		<link rel="stylesheet" href="resources/css/product/detail_view.css">
 		
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="resources/js/httpRequest.js"></script>
@@ -222,202 +16,180 @@
 				var num = document.getElementById('num').value;
 				var mul = num * ${vo.price};
 				var price = $('.price');
+				
 				for(var i=0; i<price.length; i++){
 					price[i].value = mul;
 				}
 			}
 			
 			function clickx(){
-				var div = document.getElementById("hiddendiv");				
+				var div = document.getElementById("hiddendiv");		
+				
 				if(div.style.display === 'none')  {
 				    div.style.display = 'block';
 				}else {
 				    div.style.display = 'none';
 				}
-			}
+			}		
 			
-			
-			function basket_send(f){
-			
+			function basket_send(f){	
 				var member_idx = f.member_idx.value.trim();
-				var product_idx = f.product_idx.value.trim();
-			
+				var product_idx = f.product_idx.value.trim();		
 				
 				if(member_idx == ""){
 					alert("로그인 후 이용 가능합니다.")
 					window.scrollTo({ top: 0, behavior: "smooth" });
 					return;
 				}
+				
 				if(product_idx == ""){
 					alert("상품이 존재하지 않습니다.")
 					return;
-				}
+				}				
 				
-				
-				 if(!confirm("장바구니에 등록하시겠습니까?")){
-					
+				 if(!confirm("장바구니에 등록하시겠습니까?")){			
 					retrun;
 				}
-				 
-				
-				
-				
+		
 				f.method="POST";
 				f.action="basket_insert.do";
-				f.submit();
-				
+				f.submit();		
 			}
 			
-			function basket_send_buy(f){
-				
+			function basket_send_buy(f){		
 				var member_idx = f.member_idx.value.trim();
-				var product_idx = f.product_idx.value.trim();
-		
+				var product_idx = f.product_idx.value.trim();	
 				
 				if(member_idx == ""){
 					alert("로그인 후 이용 가능합니다.")
 					window.scrollTo({ top: 0, behavior: "smooth" });
 					return;
 				}
+				
 				if(product_idx == ""){
 					alert("상품이 존재하지 않습니다.")
 					return;
 				}
-
 				
 				f.method="POST";
 				f.action="basket_buy.do";
-				f.submit();
-				
-			}
-			
-			
+				f.submit();			
+			}		
 		</script>
 	</head>
 	<body>
 	
 		<!-- 상단 -->
-	<jsp:include page="../layout/header.jsp" />
+		<jsp:include page="../layout/header.jsp" />
 	
-	
-	<div id="hiddendiv" >
-		<table style=" border-spacing: 0px;">
+		<div id="hiddendiv" >
+			<table style=" border-spacing: 0px;">		
+				<tr>
+					<td align="left">
+						<strong id="hiddenstrong">금액별배송비</strong>
+					</td>
+					<td align="right">
+						<img id="hiddenid" src="resources/sun/x.png" onclick="clickx()">
+					</td> 
+				</tr>
+				<tr>
+					<th align="left">&nbsp;&nbsp; 0원 이상~50,000원 미만</th>
+					<td class="hiddentd" align="left">3,000원</td>
+				</tr>
+				<tr>
+					<th align="left">&nbsp;&nbsp; 50,000원 이상~</th>
+					<td class="hiddentd" align="left">0원</td>
+				</tr>
+				<tr>
+					<td align="left" colspan="2">
+						<ul id="hiddenul">
+							<li>배송비 계산 기준 : 판매가 + 옵션가 + 추가상품가 + 텍스트옵션가 - 상품할인가 - 상품쿠폰할인가
+						</ul>
+					</td>
+				</tr>
+			</table>	
+		</div>
 		
+		<table class="table_view">
 			<tr>
-				<td align="left">
-					<strong id="hiddenstrong">금액별배송비</strong>
+				<td colspan="2" align="right">
+					<div id="backdiv">
+						<img src="resources/sun/backimg.png" onclick="history.back()" title="뒤로가기">
+					</div>
 				</td>
-				<td align="right">
-					<img id="hiddenid" src="resources/sun/x.png" onclick="clickx()">
+			</tr>
+			<tr>
+				<td rowspan="10" class="view_img_wrap"><img class="view_img" 
+					src="resources/productImage/${vo.image }"></td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<span class="sub_title" name="good_num">[ 상품번호:${vo.product_idx } ]</span><br>
+					<strong class="sub_name">${vo.name }</strong>
+					<hr style="border: solid 1px #123858;"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<pre><font color="#555555">판매가</font>      <font size="5px" color="#666666"><b><f:formatNumber value="${vo.price }" type="number"/></b></font>원</pre>
 				</td> 
-			</tr>
+			</tr>		
 			<tr>
-				<th align="left">&nbsp;&nbsp; 0원 이상~50,000원 미만</th>
-				<td class="hiddentd" align="left">3,000원</td>
-			</tr>
+				<td>
+					<pre><font color="#555555">구매제한</font>     <font size="2px" color="#717171">최소 1개</font> <font size="3px" color="#717171"><b>(재고 ${vo.inven}개)</b></font></pre>
+				</td> 
+			</tr>		
 			<tr>
-				<th align="left">&nbsp;&nbsp; 50,000원 이상~</th>
-				<td class="hiddentd" align="left">0원</td>
-			</tr>
-			<tr>
-				<td align="left" colspan="2">
-					<ul id="hiddenul">
-						<li>배송비 계산 기준 : 판매가 + 옵션가 + 추가상품가 + 텍스트옵션가 - 상품할인가 - 상품쿠폰할인가
-					</ul>
+				<td colspan="2">
+					<pre><font color="#555555">배송비</font>       <font size="2px" color="#717171">3000원</font></pre>
+				    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				    <a href="javascript:clickx();" class="baesong">조건별배송<img src="resources/sun/button.png" class="baesongimg"></a>
 				</td>
-			</tr>
-		</table>	
-	</div>
-	
-	<table class="table_view">
-		<tr>
-			<td colspan="2" align="right">
-				<div id="backdiv">
-					<img src="resources/sun/backimg.png" onclick="history.back()" title="뒤로가기">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="10" class="view_img_wrap"><img class="view_img" 
-				src="resources/productImage/${vo.image }"></td>
-		</tr>
-
-		<tr>	
-			<td colspan="2">
-				<span class="sub_title" name="good_num">[ 상품번호:${vo.product_idx } ]</span><br>
-				<strong class="sub_name">${vo.name }</strong>
-				<hr style="border: solid 1px #123858;"/>
-			</td>
-		</tr>
-
-		<tr>
-			<td>
-				<pre><font color="#555555">판매가</font>      <font size="5px" color="#666666"><b><f:formatNumber value="${vo.price }" type="number"/></b></font>원</pre>
-			</td> 
-		</tr>
-		
-		<tr>
-			<td>
-				<pre><font color="#555555">구매제한</font>     <font size="2px" color="#717171">최소 1개</font> <font size="3px" color="#717171"><b>(재고 ${vo.inven}개)</b></font></pre>
-			</td> 
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-				<pre><font color="#555555">배송비</font>       <font size="2px" color="#717171">3000원</font></pre>
-			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			    <a href="javascript:clickx();" class="baesong">조건별배송<img src="resources/sun/button.png" class="baesongimg"></a>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-				<pre><font color="#555555">브랜드</font>       <font size="2px" color="#717171">포켓몬</font></pre>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-				<pre><font color="#555555">제조사</font>       <font size="2px" color="#717171">The Pokemon Company(포켓몬코리아)</font></pre>
-				<hr color="#EAEAEA" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2" height="60">
-				<div style="display:flex; background-color:#F6F6F6; border-bottom:solid #EAEAEA 2px;">
-					<div style="width: 200px; display:flex;">
-						<strong class="sub_name"><font color="#111111">${vo.name }</font></strong>
+			</tr>		
+			<tr>
+				<td colspan="2">
+					<pre><font color="#555555">브랜드</font>       <font size="2px" color="#717171">포켓몬</font></pre>
+				</td>
+			</tr>		
+			<tr>
+				<td colspan="2">
+					<pre><font color="#555555">제조사</font>       <font size="2px" color="#717171">The Pokemon Company(포켓몬코리아)</font></pre>
+					<hr color="#EAEAEA" />
+				</td>
+			</tr>		
+			<tr>
+				<td colspan="2" height="60">
+					<div style="display:flex; background-color:#F6F6F6; border-bottom:solid #EAEAEA 2px;">
+						<div style="width: 200px; display:flex;">
+							<strong class="sub_name"><font color="#111111">${vo.name }</font></strong>
+						</div>
+						<div style="margin:auto;">
+							<input type="number" id="num" min="0" max="${vo.inven }" style="width:60px; height:23px; text-align:center; " value="1" style="width: 50px;" onclick="cal()">
+						</div>
 					</div>
-					<div style="margin:auto;">
-						<input type="number" id="num" min="0" max="${vo.inven }" style="width:60px; height:23px; text-align:center; " value="1" style="width: 50px;" onclick="cal()">
-					</div>
-				</div>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2" align="right">
-				<b>총 상품금액</b>
-				<b><input class="price" value="<f:formatNumber value="${vo.price }" type="number"/>" size="5px" onfocus="this.blur()" readonly>원</b>
-				<hr width="220" align="right" color="#EAEAEA" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-				<form>
-					<input type="hidden" id="member_idx" name="member_idx" value="${id.member_idx}">
-					<input type="hidden" id="product_idx" name="product_idx" value="${vo.product_idx }">
-					<button class="btn_bas" type="button" onclick="basket_send(this.form)">장바구니</button>
-					<button class="btn_pur" type="button" onclick="basket_send_buy(this.form)">구매하기</button>
-				</form>
-			</td>
-		</tr>	
-		<tr>
-			<td height="20px" class="bottomborder"></td>
-		</tr>	
-	</table>
+				</td>
+			</tr>		
+			<tr>
+				<td colspan="2" align="right">
+					<b>총 상품금액</b>
+					<b><input class="price" value="<f:formatNumber value="${vo.price }" type="number"/>" size="5px" onfocus="this.blur()" readonly>원</b>
+					<hr width="220" align="right" color="#EAEAEA" />
+				</td>
+			</tr>		
+			<tr>
+				<td colspan="2">
+					<form>
+						<input type="hidden" id="member_idx" name="member_idx" value="${id.member_idx}">
+						<input type="hidden" id="product_idx" name="product_idx" value="${vo.product_idx }">
+						<button class="btn_bas" type="button" onclick="basket_send(this.form)">장바구니</button>
+						<button class="btn_pur" type="button" onclick="basket_send_buy(this.form)">구매하기</button>
+					</form>
+				</td>
+			</tr>	
+			<tr>
+				<td height="20px" class="bottomborder"></td>
+			</tr>	
+		</table>
 		
 		<table align="center" style="margin-top: 100px;" cellpadding="0" cellspacing="0">
 	 		<tr id="content" height="45px">
@@ -508,8 +280,7 @@
 		 				- 저단가 상품, 일부 특가 상품의 경우, 인수 후에는 제품 하자나 오배송의 경우를 제외한 고객님의 단순 변심에 의한 교환, 반품이 불가능할 수 있사오니, 각 상품의 상품상세정보를 꼭 참조하십시오.	 					 				
 	 				</font>
 	 			</td>
-	 		</tr>
-	 		
+	 		</tr> 		
 	 		<tr height="45px">
 	 			<td align="left">
 	 				<b>환불안내</b>
@@ -524,6 +295,7 @@
 	 			</td>
 	 		</tr>
 	 	</table>
+	 	
 		<!-- 하단 -->
 		<jsp:include page="../layout/footer.jsp"/>
 		

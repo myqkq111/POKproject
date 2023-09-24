@@ -1,0 +1,27 @@
+#buyimg{
+	width: 400px;
+	height: 400px;
+}
+		
+.btn_pur {
+	border: none;
+	color: white;
+	background-color: #004075;
+}
+		
+.btn_bas {
+	background-color: white;
+	color: #004075;
+	border: 1px solid #004075;
+}
+
+button {
+	height: 55px;
+	width: 170px;
+	text-decoration: none;
+	font-size: 20px;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	margin:auto;
+}

@@ -7,21 +7,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>게시판 글수정</title>
-		
-		<style  type="text/css">
-        body { font-family: '08서울남산체'; }
-        a { 
-            text-decoration:none;
-            color: black;
-            cursor: pointer;
-        }
-    	</style>
     	
     	<link rel="stylesheet" href="resources/css/layout/btn.css"/>
 		<link rel="stylesheet" href="resources/css/board/list.css"/>
 		
     	<script type="text/javascript">
-    		function send(f) {
+    		function send(f) {    			
     			
     			if(!confirm("수정하시겠습니까?")) {
 					return;
@@ -38,13 +29,11 @@
 				f.action = "modify.do";
 				f.method="post";
 				f.submit();
-			}
-    	
-    	</script>
-    
-		
+			}	
+    	</script>	
 	</head>
 	<body>
+	
 		<jsp:include page="../layout/header.jsp"/>
 		
 		<table border="0" width="1000" align="center">
@@ -106,6 +95,8 @@
 				</tr>
 			</table>
 		</form>
+		
 		<jsp:include page="../layout/footer.jsp"/>
+		
 	</body>
 </html>

@@ -4,127 +4,27 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<style type="text/css">
-			.btn_bas {
-				background-color: white;
-				color: #004075;
-				border: 1px solid #004075;
-				height: 30px;
-				width: 70px;
-				text-decoration: none;
-				font-size: 15px;
-				border-radius: 4px;
-				font-weight: bold;
-				cursor: pointer;
-				margin-right: 20px;
-			}
-			/* input[type=button] {
-				height: 30px;
-				width: 70px;
-				text-decoration: none;
-				font-size: 15px;
-				border-radius: 4px;
-				font-weight: bold;
-				cursor: pointer;
-				margin-right: 20px;
-			} */
-			.sub_name{
-				font-size: 18px;
-	    		letter-spacing: -1px;
-				margin:15px;
-			}
-			#listimage{
-				width:110px;
-				height:130px;
-				cursor:pointer;
-			}
-			
-			.baesong{
-					border: 2px solid #EAEAEA;
-					padding: 6px;
-				    height: 20px;
-   					font-size: 13px !important;
-   					background-color: #F6F6F6;
-   					margin-left:70px;
-			} 	
-			.baesong:hover{
-							background-color:#EAEAEA;
-						}
-			.baesongimg{
-						width:5px; 
-						height:5px;
-						margin-left:5px;
-						margin-bottom:2px;
-						
-			}	
-			#hiddendiv{
-				background-color: #FFFFFF;
-				border:solid 1px #000000;
-				height: 225px;
-				width: 300px;
-				display:flex; 
-				position:absolute;
-				top: 65%;
-				left: 33%;
-				display:none;	
-				padding-right:10px;	
-				padding-left:10px;		
-			}
-			
-			th{
-				    padding: 0 5px 0 3px;
-	  				border-bottom: 1px solid #e8e8e8;
-				    color: #444;
-				    font-size: 13px;
-				    text-align: left;
-			}
-			.hiddentd{
-				    padding: 8px 0 8px 12px;
-				    color: #666;
-				    font-size: 12px;
-				    border-bottom: 1px solid #e8e8e8;
-			}
-			
-			#hiddenstrong{
-					width: 100px;
-					display: block;
-				    height: 27px;
-				    padding: 10px 0 0 10px;
-				    color: #222;
-			}			
-			#hiddenid{
-				cursor:pointer;
-			}
-			
-			.hiddentd2{
-				    padding: 8px 0 8px 12px;
-				    color: #666;
-				    font-size: 12px;
+		<link rel="stylesheet" href="resources/css/product/buylist.css">
 		
-			}
-		
-		</style>
 		<script type="text/javascript">
-			function list_delete(f){
-				
+			function list_delete(f){			
 				if(!confirm('주문을 취소하시겠습니까?')){
 					return;
 				}
 				
 				f.method="POST";
 				f.action="buylist_delete.do";
-				f.submit();				
-				
+				f.submit();								
 			}		
 			
 			function clickx(){
-				var div = document.getElementById("hiddendiv");				
+				var div = document.getElementById("hiddendiv");	
+				
 				if(div.style.display === 'none')  {
 				    div.style.display = 'block';
 				}else {
@@ -134,6 +34,7 @@
 		</script>
 	</head>
 	<body>
+	
 		<jsp:include page="../layout/header.jsp"/>
 		
 		<div id="hiddendiv">
@@ -161,17 +62,16 @@
 				<tr>
 					<th align="left" style="border-bottom: 0px solid #e8e8e8;">&nbsp;&nbsp; 추가 적립</th>
 					<td class="hiddentd2" align="left">0원이상 구매시 구매금액당 0.0% 추가 적립</td>
-				</tr>
-				
-				
+				</tr>			
 			</table>	
 		</div>
 		
 		<table width="1000" align="center">	
 			<tr>
         		<td colspan="2" height="100" align="center">
-        		<font size="4px"><b class="title">구매내역</b></font>
-        		<hr style="border: solid 1px #123858;"></td>
+        			<font size="4px"><b class="title">구매내역</b></font>
+        			<hr style="border: solid 1px #123858;">
+        		</td>
       	    </tr>
       	</table> 
       	
@@ -208,8 +108,7 @@
 					</td>
 				</tr>	 
 			</table>    	
-      	</c:if>
-      	
+      	</c:if>  	
       	
       	<c:forEach var="list" items="${list }">   	
       		<table width="550" align="center" style="margin-bottom: 0px;">
@@ -235,11 +134,8 @@
 					<td align="center" style="color:#004075;">
 						<font size="2px"><b style="margin-right: 20px;">상품준비중</b></font>
 					</td>
-				</tr>
-				
-		
-				<tr>
-				
+				</tr>						
+				<tr>			
 					<td>					
 						<font size="2px" color="#717171" style="margin:15px;"><b>수량:${list.buy_count }개</b></font><br>
 						<b style="margin:15px;"><f:formatNumber value="${list.price * list.buy_count}" type="number"/><font size="2px">원</font></b>
@@ -259,5 +155,6 @@
 		</c:forEach>
 		
 		<jsp:include page="../layout/footer.jsp"/>
+		
 	</body>
 </html>
