@@ -3,7 +3,6 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="buy">
-
 	<!-- 결제버튼 클릭 후 구매리스트에 등록 -->
 	<insert id="buylist_insert" parameterType="buylist">
 		insert into buylist values(
@@ -35,9 +34,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="buylist_delete" parameterType="int">
 		delete from buylist where buylist_idx = #{buylist_idx}
 	</delete>
-
-</mapper>
-		
-		
-		
-		
+</mapper>	

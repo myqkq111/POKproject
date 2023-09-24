@@ -7,8 +7,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member
 	</select>
 	
-	
-		
 	<select id="check_id" resultType="int" parameterType="String">
 		select count(*) from member where id = #{id}
 	</select>
@@ -29,14 +27,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{detailaddr},
 		#{member_type}
 		)
-	
 	</insert>
 	
-	
 	<!-- 마이페이지 멤버 정보수정 -->
-	<update id="member_update" parameterType="member">
-	
-	update member set 
+	<update id="member_update" parameterType="member">	
+		update member set 
 		pw=#{pw}, 
 		birth=#{birth}, 
 		email=#{email},
@@ -44,56 +39,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		mailaddr=#{mailaddr},
 		roadaddr=#{roadaddr},
 		detailaddr=#{detailaddr}
-		where id=#{id}
-	
+		where id=#{id}	
 	</update>
-	
-	
+		
 	<!-- 멤버 삭제 -->
 	<delete id="member_delete" parameterType="String">
 		delete from member where id=#{id}
 	</delete>
 	
-	
-	
-	
-	
-	
 	<select id="loginCheck" resultType="member" parameterType="String">
 		select * from member where id = #{id}
 	</select>
 	
-	
-	
-	
-	
-	
-	
 	<!-- admin 관리자 페이지 -->
 	<update id="admin_member_update" parameterType="member">
-	update member set MEMBER_TYPE=#{member_type} where id=#{id}
+		update member set MEMBER_TYPE=#{member_type} where id=#{id}
 	</update>
-	
-	
-	
 	
 	<!-- 로그인한 유저 타입 -->
 	<select id="login_userType" parameterType="member" resultType="String">
 		select member_type from member where id = #{id}
 	</select>
-	
-	
-	
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@ import vo.ProductVO;
 
 public class ProductDAO {
 	
-SqlSession sqlSession;
+	SqlSession sqlSession;
 	
 	public ProductDAO(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
@@ -19,46 +19,31 @@ SqlSession sqlSession;
 	public int product_insert(ProductVO vo) {
 		int res = sqlSession.insert("p.product_insert",vo);
 		return res;
-	}
-	
+	}	
 	
 	//상품수정
-		public int product_update(ProductVO vo) {
-			int res = sqlSession.insert("p.product_update",vo);
-			return res;
-		}
-		
-		
-		// 상품 전체조회
-		public List<ProductVO> p_list(){
-			List<ProductVO> list = sqlSession.selectList("p.p_list");
-			
-			return list;
-		}
-		
-		// 상품 하나 조회
-		public ProductVO selectOne(String idx) {
-			
-			ProductVO vo = sqlSession.selectOne("p.p_one" , idx);
-			
-			return vo;
-		}
-		
-		
-		
-		
-		
-		
-		// 관리자 상품 삭제
-		public int product_delete(String idx) {
-			
-			int res = sqlSession.delete("p.product_delete" , idx);
-			
-			
-			return res;	
-			
-		}
-
+	public int product_update(ProductVO vo) {
+		int res = sqlSession.insert("p.product_update",vo);
+		return res;
+	}	
+	
+	// 상품 전체조회
+	public List<ProductVO> p_list(){
+		List<ProductVO> list = sqlSession.selectList("p.p_list");		
+		return list;
+	}
+	
+	// 상품 하나 조회
+	public ProductVO selectOne(String idx) {		
+		ProductVO vo = sqlSession.selectOne("p.p_one" , idx);	
+		return vo;
+	}
+	
+	// 관리자 상품 삭제
+	public int product_delete(String idx) {		
+		int res = sqlSession.delete("p.product_delete" , idx);		
+		return res;			
+	}
 	
 	//상품 조회(메인페이지 전시용)
 	public List<ProductVO> main_Product(){
@@ -71,6 +56,7 @@ SqlSession sqlSession;
 		int res = sqlSession.selectOne("p.nextCheck");
 		return res;
 	}
+	
 	//상품 조희 더보기(메인페이지 전시용)
 	public List<ProductVO> main_Product_plus(HashMap<String, Integer> map){
 		List<ProductVO> list = sqlSession.selectList("p.main_Product_plus", map);
@@ -200,8 +186,7 @@ SqlSession sqlSession;
 	//조회수 증가
 	public int update_hit(int product_idx) {
 		int res =sqlSession.update("p.update_hit",product_idx);
-		return res;
-		
+		return res;		
 	}
 	
 	//구매갯수만큼 상품의 재고수량에서 빼고 판매량 올리기
@@ -209,6 +194,4 @@ SqlSession sqlSession;
 		int res = sqlSession.update("p.b_count",map);
 		return res;
 	}
-	
-
 }

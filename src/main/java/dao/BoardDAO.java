@@ -67,12 +67,4 @@ public class BoardDAO {
 		int res = sqlSession.update("b.board_update",vo);
 		return res;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }

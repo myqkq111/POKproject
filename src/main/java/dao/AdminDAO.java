@@ -12,30 +12,15 @@ public class AdminDAO {
 		this.sqlSession = sqlSession;
 	}
 	
-	
-	
-	
-	
-	public int admin_member_update(MemberVO vo) {
-		
+	public int admin_member_update(MemberVO vo) {		
 		int res = sqlSession.update("m.admin_member_update",vo);
-		return res;
 		
+		return res;		
 	}
-	
-	
-	
+
 	public String login_user(MemberVO vo) {
 		String type = sqlSession.selectOne("m.login_userType",vo);
 		
 		return type;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }

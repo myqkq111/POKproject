@@ -29,7 +29,6 @@ public class ProductController {
 	@Autowired
 	ServletContext servletContext;
 	
-	
 	@Autowired
 	HttpSession session;
 
@@ -41,7 +40,6 @@ public class ProductController {
 	
 	@Autowired
 	ProductDAO product_dao;
-
 
 	private BasketVO MemberVO;
 	private BasketVO ProductVO;
@@ -56,20 +54,17 @@ public class ProductController {
 		
 		List<ProductVO> list = product_dao.main_Product(); //메인에 20개의 상품을 가져온다		
 		int res = product_dao.nextCheck(); //다음 상품이 있는지 없는지 확인
-		int number = list.size(); //상품의 갯수 체크
-		
+		int number = list.size(); //상품의 갯수 체크		
 		
 		//조회수 세션 리셋
-		request.getSession().removeAttribute("show");
-		
+		request.getSession().removeAttribute("show");		
 		
 		model.addAttribute("list",list);
 		model.addAttribute("res",res);
 		model.addAttribute("number",number);
 		
 		return Common.VIEW_PATH+"main/main.jsp";
-	}
-	
+	}	
 	
 	//물품 리스트 전체 조회 ( 관리자 페이지용 )
 	public String product_list(Model model){
@@ -78,8 +73,7 @@ public class ProductController {
 		
 		model.addAttribute("p_list" ,list);
 		
-		return Common.VIEW_PATH+"admin/admin.jsp";
-		
+		return Common.VIEW_PATH+"admin/admin.jsp";	
 	}				
 	
 	//메인페이지 상품 더보기
@@ -199,7 +193,6 @@ public class ProductController {
 		return "[{'res':'no'}]";	
 	}
 	
-	
 	//카테고리 페이지 이동
 	@RequestMapping("cate_page.do")
 	public String cate_page(String cate, Model model) {		
@@ -249,109 +242,100 @@ public class ProductController {
 		
 		return Common.VIEW_PATH + "product/cate_page.jsp";
 	}
-	
-	
-	
-	// 물품 변경
-		@RequestMapping("product_update.do")
-		@ResponseBody
-		public String product_update(ProductVO vo) {
-			//유효성 검사
-			if(vo.getCate().isEmpty() || vo.getName().isEmpty()) {
-				return "[{'res':'no'}]";
-			}
-			
-			//상품이미지 절대경로 가져오기
-			String ProrelativePath = "/resources/productImage";		
-			String ProrealPath = servletContext.getRealPath(ProrelativePath);
-			//상품설명 이미지 절대경로 가져오기 
-			String ConrelativePath = "/resources/contentImage";		
-			String ConrealPath = servletContext.getRealPath(ConrelativePath);
 
-			//상품이미지 이름
-			MultipartFile imageFile = vo.getImageFile();
-			
-			String imageName = "no_file";
-			
-			if(imageFile != null) {
-				imageName = imageFile.getOriginalFilename();
-			}
-			
-			//상품설명 이미지 이름
-			MultipartFile imageDetail = vo.getImageDetail();
-			
-			String detailImageName = "no_file";
-			
-			if(imageDetail != null) {	
-				detailImageName = imageDetail.getOriginalFilename();
-				if(detailImageName == null || detailImageName.isEmpty()) {
-					detailImageName = "no_file";
-				}
-			}	
-			//혹시 모를 유효성 검사
-			if(imageName == "no_file" || detailImageName == "no_file") {
-				return "[{'res':'no'}]";
-			}
-			
-			//이미지 절대경로에 저장
-			if(imageName != "no_file" && detailImageName != "no_file") {
-				File file1 = new File(ProrealPath,imageName); //상품이미지 이름을 담은 파일
-				File file2 = new File(ConrealPath,detailImageName); //상품설명 이미지 이름을 담은 파일
-				
-				if(!file1.exists()) { //경로가 없다면
-					file1.mkdirs();	  //경로까지 폴더생성
-				}else { // 경로가 있다면 동일파일명이 있다는 것
-					//동일파일명 방지
-					long time = System.currentTimeMillis();
-					imageName = String.format("%d_%s",time,imageName);
-					file1 = new File(ProrealPath,imageName);
-				}
-				
-				if(!file2.exists()) { 
-					file2.mkdirs();
-				}else {
-					long time = System.currentTimeMillis();
-					detailImageName = String.format("%d_%s",time,detailImageName);
-					file2 = new File(ConrealPath,detailImageName);
-				}
-				
-				//이미지 업로드			
-				try {
-					imageFile.transferTo(file1);
-					imageDetail.transferTo(file2);
-				} catch (IllegalStateException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}								
-			}
-			
-			vo.setImage(imageName);
-			vo.setContent_img(detailImageName);	
-			
-			int res = product_dao.product_update(vo);
-			
-			if(res > 0) {
-				return "[{'res':'yes'}]";
-			}		
-			return "[{'res':'no'}]";	
+	// 물품 변경
+	@RequestMapping("product_update.do")
+	@ResponseBody
+	public String product_update(ProductVO vo) {
+		//유효성 검사
+		if(vo.getCate().isEmpty() || vo.getName().isEmpty()) {
+			return "[{'res':'no'}]";
 		}
-	
-	
-	
-	
-	
-	
+		
+		//상품이미지 절대경로 가져오기
+		String ProrelativePath = "/resources/productImage";		
+		String ProrealPath = servletContext.getRealPath(ProrelativePath);
+		//상품설명 이미지 절대경로 가져오기 
+		String ConrelativePath = "/resources/contentImage";		
+		String ConrealPath = servletContext.getRealPath(ConrelativePath);
+
+		//상품이미지 이름
+		MultipartFile imageFile = vo.getImageFile();
+		
+		String imageName = "no_file";
+		
+		if(imageFile != null) {
+			imageName = imageFile.getOriginalFilename();
+		}
+		
+		//상품설명 이미지 이름
+		MultipartFile imageDetail = vo.getImageDetail();
+		
+		String detailImageName = "no_file";
+		
+		if(imageDetail != null) {	
+			detailImageName = imageDetail.getOriginalFilename();
+			if(detailImageName == null || detailImageName.isEmpty()) {
+				detailImageName = "no_file";
+			}
+		}	
+		//혹시 모를 유효성 검사
+		if(imageName == "no_file" || detailImageName == "no_file") {
+			return "[{'res':'no'}]";
+		}
+		
+		//이미지 절대경로에 저장
+		if(imageName != "no_file" && detailImageName != "no_file") {
+			File file1 = new File(ProrealPath,imageName); //상품이미지 이름을 담은 파일
+			File file2 = new File(ConrealPath,detailImageName); //상품설명 이미지 이름을 담은 파일
 			
+			if(!file1.exists()) { //경로가 없다면
+				file1.mkdirs();	  //경로까지 폴더생성
+			}else { // 경로가 있다면 동일파일명이 있다는 것
+				//동일파일명 방지
+				long time = System.currentTimeMillis();
+				imageName = String.format("%d_%s",time,imageName);
+				file1 = new File(ProrealPath,imageName);
+			}
+			
+			if(!file2.exists()) { 
+				file2.mkdirs();
+			}else {
+				long time = System.currentTimeMillis();
+				detailImageName = String.format("%d_%s",time,detailImageName);
+				file2 = new File(ConrealPath,detailImageName);
+			}
+			
+			//이미지 업로드			
+			try {
+				imageFile.transferTo(file1);
+				imageDetail.transferTo(file2);
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}								
+		}
+		
+		vo.setImage(imageName);
+		vo.setContent_img(detailImageName);	
+		
+		int res = product_dao.product_update(vo);
+		
+		if(res > 0) {
+			return "[{'res':'yes'}]";
+		}		
+		return "[{'res':'no'}]";	
+	}
+		
 	//상품 상세페이지
 	@RequestMapping("detail_view.do")
 	public String detail_view(int product_idx, Model model) {
 		
 		ProductVO vo = product_dao.product_information(product_idx);
-		
-		
+				
 		//조회수 증가
 		HttpSession session = request.getSession();
 		String show = (String)session.getAttribute("show");
@@ -359,13 +343,9 @@ public class ProductController {
 		if(show == null) {
 			int res = product_dao.update_hit(product_idx);
 			session.setAttribute("show", "0");
-		}
-		
-		
+		}				
 		model.addAttribute("vo",vo);
-		
-		
-		
+	
 		return Common.VIEW_PATH + "product/detail_view.jsp";
 	}
 	
@@ -384,8 +364,7 @@ public class ProductController {
 			model.addAttribute("standard","");
 			
 			return Common.VIEW_PATH + "product/search.jsp";
-		}
-		
+		}		
 		
 		//조회수 세션 리셋
 		request.getSession().removeAttribute("show");
@@ -481,7 +460,6 @@ public class ProductController {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("cate", cate);
 		map.put("search", search);
-
 
 		//조회수 세션 리셋
 		request.getSession().removeAttribute("show");
@@ -579,7 +557,7 @@ public class ProductController {
 	//검색페이지에 검색기능
 	@RequestMapping("searchPage_search.do")
 	public String searchPage_search(String cate, String standard, String search, Model model) {
-		System.out.println(search+"dg");
+
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("cate", cate);
 		map.put("search", search);
@@ -588,8 +566,7 @@ public class ProductController {
 		request.getSession().removeAttribute("show");
 		
 		//아무것도 적지않고 검색버튼을 눌렀을 때
-		if(search.isEmpty() || search == null) {
-			
+		if(search.isEmpty() || search == null) {			
 			List<ProductVO> list = null;
 			
 			model.addAttribute("list",list);
@@ -681,9 +658,6 @@ public class ProductController {
 		model.addAttribute("cate",cate);
 		model.addAttribute("standard",standard);
 		
-		return Common.VIEW_PATH + "product/search.jsp";
-		
+		return Common.VIEW_PATH + "product/search.jsp";		
 	}
-
-
 }

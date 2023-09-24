@@ -78,7 +78,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="board_update" parameterType="board">
 		update board set subject=#{subject}, content=#{content} where idx=#{idx}
 	</update>
-	
-	
-
 </mapper>

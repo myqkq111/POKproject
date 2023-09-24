@@ -6,7 +6,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
 public class Context_4_fileupload { //라이브러리를 추가할 때마다 객체를 추가해주어야 한다.
-	
+
 	@Bean
 	public CommonsMultipartResolver multipartResolver() {
 		
@@ -15,10 +15,6 @@ public class Context_4_fileupload { //라이브러리를 추가할 때마다 객
 		multipartResolver.setDefaultEncoding("utf-8");
 		multipartResolver.setMaxUploadSize(10485760);
 		
-		return multipartResolver;
-		
+		return multipartResolver;		
 	}
-	
-	
-	
 }
