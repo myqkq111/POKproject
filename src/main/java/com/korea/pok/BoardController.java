@@ -60,8 +60,7 @@ public class BoardController {
 		request.getSession().removeAttribute("show");//05-23
 		
 		model.addAttribute("list",list);
-		model.addAttribute("pageMenu",pageMenu);
-		
+		model.addAttribute("pageMenu",pageMenu);	
 		
 		return Common.VIEW_PATH1 + "board_list.jsp?page="+nowPage;
 	}
@@ -103,8 +102,7 @@ public class BoardController {
 		
 		if(res > 0) {
 			return "redirect:board_list.do";
-		}
-		
+		}		
 		return null;
 	}
 	
@@ -189,10 +187,7 @@ public class BoardController {
 			
 		if(n > 0) {
 			return "redirect:board_list.do?page="+page;
-		}
-			
-			return null;
-		}
-	
-	
+		}		
+		return null;
+	}
 }
